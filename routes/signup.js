@@ -5,6 +5,7 @@ import bcrypt from 'bcryptjs'
 
 /* GET home page. */
 router.post("/", async function (req, res) {
+    console.log(req.body);
     try {
         const { username, email, password } = req.body;
 
