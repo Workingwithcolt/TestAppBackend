@@ -1,6 +1,5 @@
 
 import { Router } from "express";
-import { asyncHandler } from "../helper/helper";
 const router = Router();
 
 router.get(
