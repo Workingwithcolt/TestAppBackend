@@ -9,7 +9,7 @@ router.get(
     var usersController =
       req.locals.controllerFactory.getUserController(req.locals)
     var results =
-      await usersController.getAll(query);
+      await usersController.getOne(query);
 
     res.send(results);
   }
@@ -27,7 +27,6 @@ router.post('/', async (req, res) => {
 })
 
 router.put("/",
-
   async function (req, res) {
     let query = req.query ? req.query : {};
     var accountsController =
