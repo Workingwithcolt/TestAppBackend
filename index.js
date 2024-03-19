@@ -7,10 +7,15 @@ import userRouter from "./routes/users.js"
 import signupRouter from "./routes/signup.js"
 import signinRouter from "./routes/signin.js"
 import { mongodbMiddleware } from './MongoDB/Mongodbmiddleware.js'
+import bodyParser from "body-parser";
 var app = express();
 
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
+
+app.use(bodyParser.json({limit: '500mb'}));
+
+app.use(bodyParser.urlencoded({
+    extended: false, limit: '500mb'
+}));
 app.use(cors({ origin: "*", }));
 
 app.use(connect)
