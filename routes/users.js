@@ -6,11 +6,11 @@ router.get(
   "/",
   async function (req, res) {
     let query = req.query ? req.query : {};
+    console.log(query);
     var usersController =
       req.locals.controllerFactory.getUserController(req.locals)
     var results =
       await usersController.getOne(query);
-
     res.send(results);
   }
 );
