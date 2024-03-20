@@ -8,6 +8,9 @@ import signupRouter from "./routes/signup.js"
 import signinRouter from "./routes/signin.js"
 import paymentRouter from "./routes/paymentRoute.cjs"
 import { mongodbMiddleware } from './MongoDB/Mongodbmiddleware.js'
+import dotenv from 'dotenv'
+dotenv.config()
+
 import bodyParser from "body-parser";
 var app = express();
 
