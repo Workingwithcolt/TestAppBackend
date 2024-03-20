@@ -16,13 +16,13 @@ router.get('/', async(req, res) => {
       enabled: true,
     },
   });
-  console.log(res);
-  res.json({
+ 
+  res.send({
     paymentIntent: paymentIntent.client_secret,
     ephemeralKey: ephemeralKey.secret,
     customer: customer.id,
     publishableKey: process.env.PUBKEYSTRIPE
-  });
+  })
 })
 
 // router.post('/', async (req, res) => {
