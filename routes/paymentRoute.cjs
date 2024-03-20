@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router(); // Create a router using the function from the express module
 const stripe = require("stripe")("sk_test_51KAWSCSFbFeDhq0VqIOXaQQtkTfDQJowOzj5PvI5f2BtX5ZEUuNaeR5E5Dd7c0RYRIyyrqob9xNCLeKYN622TN7o007z49AxkP");
 
-router.get('/',()=>{
+router.get('/',(req,res)=>{
   res.send({message:"success"})
 })
 router.post('/', async (req, res) => {
