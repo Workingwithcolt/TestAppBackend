@@ -6,7 +6,7 @@ import indexRouter from "./routes/index.js"
 import userRouter from "./routes/users.js"
 import signupRouter from "./routes/signup.js"
 import signinRouter from "./routes/signin.js"
-import paymentRouter from "./routes/paymentRoute.js"
+import paymentRouter from "./routes/paymentRoute.cjs"
 import { mongodbMiddleware } from './MongoDB/Mongodbmiddleware.js'
 import bodyParser from "body-parser";
 var app = express();
