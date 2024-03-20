@@ -3,7 +3,7 @@ const router = express.Router(); // Create a router using the function from the 
 const stripe = require("stripe")("sk_test_51KAWSCSFbFeDhq0VqIOXaQQtkTfDQJowOzj5PvI5f2BtX5ZEUuNaeR5E5Dd7c0RYRIyyrqob9xNCLeKYN622TN7o007z49AxkP");
 
 
-router.post('/intents', async (req, res) => {
+router.post('/', async (req, res) => {
    // Use an existing Customer ID if this is a returning customer.
   const customer = await stripe.customers.create();
   const ephemeralKey = await stripe.ephemeralKeys.create(
