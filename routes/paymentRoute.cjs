@@ -20,7 +20,7 @@ router.post('/', async (req, res) => {
       enabled: true,
     },
   });
-
+console.log(res);
   res.json({
     paymentIntent: paymentIntent.client_secret,
     ephemeralKey: ephemeralKey.secret,
@@ -28,5 +28,6 @@ router.post('/', async (req, res) => {
     publishableKey: 'pk_test_51KAWSCSFbFeDhq0Vk731Cp1hOPQSBIYGgLdddjjA1ODAW990K51MDZ267GPaE8a04ZQ2rfU5PF1HX3qaSQ2q96VI00qnwJ2bd8'
   });
 })
+
 module.exports =  router;
 
