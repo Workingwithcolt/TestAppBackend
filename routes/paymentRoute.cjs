@@ -1,8 +1,11 @@
 const express = require("express");
+const dotenv = require('dotenv')
 const router = express.Router(); // Create a router using the function from the express module
+dotenv.config()
 const stripe = require("stripe")(process.env.STRIPESECRET);
 
-router.get('/', async(req, res) => {
+router.get('/', async (req, res) => {
+  console.log("it is add");
   const customer = await stripe.customers.create();
   const ephemeralKey = await stripe.ephemeralKeys.create(
     { customer: customer.id },
@@ -16,13 +19,14 @@ router.get('/', async(req, res) => {
       enabled: true,
     },
   });
- 
+
   res.send({
     paymentIntent: paymentIntent.client_secret,
     ephemeralKey: ephemeralKey.secret,
     customer: customer.id,
     publishableKey: process.env.PUBKEYSTRIPE
   })
+
 })
 
 // router.post('/', async (req, res) => {
